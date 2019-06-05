@@ -1,0 +1,12 @@
+import datetime
+from datetime import datetime
+infileName = 'PRISM_ppt_stable_4kmD2_20190105_bil.bil','PRISM_ppt_stable_4kmD2_20190125_bil.bil','PRISM_ppt_stable_4kmD2_20190330_bil.bil','PRISM_ppt_stable_4kmD2_20191205_bil.bil'
+
+
+for i in infileName:
+    doy = datetime.strptime(i[23:31],'%Y%m%d')
+    tt = doy.timetuple()
+
+    outJdate = str('%d%03d' % (tt.tm_year, tt.tm_yday))
+
+    print(i[0:23]+outJdate)
